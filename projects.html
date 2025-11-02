@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects / Works</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <nav class="navbar">
+    <h1 class="logo">Poloyapoy's E-Portfolio</h1>
+
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main class="content">
+  <h2>Projects / Works</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Group Digital Clock</h3>
+      <p>A web-based digital clock.</p>
+      <a href="https://litspoloyaps.github.io/Digital-Clock" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Group Calculator</h3>
+      <p>A web app for basic calculations.</p>
+      <a href="https://litspoloyaps.github.io/Calculator" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>Group Student Portal</h3>
+      <p>A web portal for students to manage their info.</p>
+      <a href="https://litspoloyaps.github.io/Student-Portal" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>E-Library</h3>
+      <p>Browse and read e-books anytime, anywhere.</p>
+      <a href="https://litspoloyaps.github.io/Basa-Tayo" target="_blank">View Project</a>
+    </div>
+    <div class="project-card">
+      <h3>LitsTech</h3>
+      <p>Facebook page for laptop & desktop repair inquiries.</p>
+      <a href="https://www.facebook.com/profile.php?id=61559259548642" target="_blank">View Demo</a>
+    </div>
+    <div class="project-card">
+      <h3>Group Resume Websites</h3>
+      <p>A website project showcasing resumes.</p>
+      <a href="https://litspoloyaps.github.io/Resume-Website" target="_blank">View Project</a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <p>© 2025 Lito Poloyapoy. All rights reserved.</p>
+</footer>
+
+<script>
+
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('show');
+  });
+</script>
+</body>
+</html>
