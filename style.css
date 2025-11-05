@@ -56,41 +56,6 @@ header {
   color: #ffd43b;
 }
 
-.menu-toggle {
-  display: none;
-  font-size: 28px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-}
-
-@media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    width: 100%;
-    background: #333;
-    padding: 15px 0;
-  }
-
-  .nav-links.show {
-    display: flex;
-  }
-
-  .nav-links li {
-    margin: 10px 0;
-  }
-}
-
 .hero {
   text-align: center;
   padding: 4rem 1rem;
@@ -246,124 +211,267 @@ body.dark .about p {
   margin: 3px 0;
 }
 
-.certificate-card {
+/* ---------------------------
+   CERTIFICATES PAGE STYLING
+----------------------------*/
+
+.content {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 1rem;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2.2rem;
+  color: #004080;
+  margin-bottom: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 3px solid #004080;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+}
+
+/* Card Layout */
+.card {
   display: flex;
   align-items: center;
-  background: #f8f8f8;
-  padding: 15px;
+  justify-content: start;
+  background: #ffffff;
   border-radius: 12px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
+  margin-bottom: 1.8rem;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.certificate-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 15px rgba(0,0,0,0.2);
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
+/* Certificate Images */
 .certificate-logo {
-  width: 120px;
+  width: 160px;
   height: auto;
-  border-radius: 8px;
-  margin-right: 15px;
-  object-fit: cover;
-  flex-shrink: 0;
+  border-radius: 10px;
+  margin-right: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificate-logo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* Certificate Information */
+.certificate-info {
+  text-align: left;
+  flex: 1;
 }
 
 .certificate-info h3 {
-  margin: 0 0 5px 0;
-  font-size: 16px;
-  color: #1e2a38;
+  font-size: 1.3rem;
+  color: #004080;
+  margin-bottom: 0.4rem;
 }
 
 .certificate-info p {
-  margin: 0;
-  font-size: 14px;
+  font-size: 0.95rem;
   color: #555;
 }
 
+/* ---------------------------
+   MODAL IMAGE VIEWER
+----------------------------*/
 .modal {
-  display: none;
+  display: none; /* Hidden by default */
   position: fixed;
-  z-index: 999;
-  padding-top: 60px;
+  z-index: 100;
+  padding-top: 80px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.8);
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .modal-content {
-  margin: auto;
   display: block;
-  width: 80%;
-  max-width: 700px;
+  margin: auto;
+  max-width: 85%;
+  max-height: 85%;
   border-radius: 10px;
-  animation: zoomIn 0.3s;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+  animation: fadeIn 0.4s ease-in;
 }
 
-@keyframes zoomIn {
-  from {transform: scale(0.7);}
-  to {transform: scale(1);}
-}
-
+/* Modal Close Button */
 .close {
   position: absolute;
   top: 25px;
-  right: 45px;
-  color: white;
+  right: 40px;
+  color: #fff;
   font-size: 40px;
   font-weight: bold;
   cursor: pointer;
-  transition: 0.3s;
+  transition: color 0.3s;
 }
 
 .close:hover {
-  color: #ccc;
+  color: #ffcc00;
 }
 
-@media only screen and (max-width: 700px) {
-  .certificate-card {
+/* Fade-in animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* ---------------------------
+   RESPONSIVE DESIGN
+----------------------------*/
+@media (max-width: 900px) {
+  .card {
     flex-direction: column;
-    align-items: center;
     text-align: center;
   }
 
   .certificate-logo {
-    margin-bottom: 10px;
-    margin-right: 0;
+    margin: 0 0 1rem 0;
+    width: 80%;
+    max-width: 300px;
   }
 
-  .modal-content {
-    width: 95%;
+  .certificate-info {
+    text-align: center;
   }
 }
 
-.project-list {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+@media (max-width: 500px) {
+  .content h2 {
+    font-size: 1.8rem;
+  }
+
+  .certificate-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .certificate-info p {
+    font-size: 0.9rem;
+  }
 }
 
+/* ---------------------------
+   PROJECTS PAGE STYLING
+----------------------------*/
+
+.content {
+  max-width: 1100px;
+  margin: 3rem auto;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.content h2 {
+  font-size: 2.2rem;
+  color: #004080;
+  margin-bottom: 2.5rem;
+  border-bottom: 3px solid #004080;
+  display: inline-block;
+  padding-bottom: 0.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Grid layout for projects */
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Project card styling */
 .project-card {
-  background: #fafafa;
-  border: 1px solid #ddd;
-  border-radius: 10px;
-  padding: 20px;
-  width: 250px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.project-card a {
-  color: #2575fc;
-  text-decoration: none;
-  font-weight: bold;
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
+
+.project-card h3 {
+  color: #004080;
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.project-card p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+/* Project buttons */
+.project-card .btn {
+  background: #004080;
+  color: #fff;
+  padding: 0.6rem 1.2rem;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background: #ffcc00;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-card {
+    padding: 1.2rem;
+  }
+
+  .project-card h3 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Dark Mode Support */
+body.dark-mode .project-card {
+  background: #1e1e1e;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .project-card h3 {
+  color: #ffcc00;
+}
+
+body.dark-mode .project-card p {
+  color: #ccc;
+}
+
+body.dark-mode .project-card .btn {
+  background: #ffcc00;
+  color: #000;
+}
+
+body.dark-mode .project-card .btn:hover {
+  background: #fff;
+  color: #004080;
+}
+
 
 .contact form {
   display: flex;
@@ -433,73 +541,80 @@ footer {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-.skills {
-  width: 90%;
-  max-width: 800px;
+/* ---------------------------
+   SKILLS PAGE STYLING
+----------------------------*/
+
+.skills-section {
+  max-width: 1000px;
   margin: 3rem auto;
+  padding: 1.5rem;
   text-align: center;
 }
 
-.skills h2 {
-  font-size: 1.8rem;
+.skills-section h2 {
+  font-size: 2rem;
+  color: #004080;
   margin-bottom: 1.5rem;
-  color: #1e2a38;
+  border-bottom: 3px solid #004080;
+  display: inline-block;
+  padding-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-.skills-list {
+/* Grid layout for skill tags */
+.skills-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 15px;
+  gap: 0.8rem;
+  margin-top: 1rem;
 }
 
-.skills-list span {
-  display: inline-block;
-  background: #007bff;
-  color: white;
+/* Skill badge styling */
+.skills-grid span {
+  background: #e6f0ff;
+  color: #004080;
+  padding: 0.6rem 1rem;
+  border-radius: 20px;
   font-weight: 500;
-  padding: 10px 20px;
-  border-radius: 50px;
-  transition: transform 0.3s, background 0.3s;
+  font-size: 1rem;
+  transition: background 0.3s ease, transform 0.3s ease, color 0.3s ease;
   cursor: default;
+  box-shadow: 0 3px 8px rgba(0, 64, 128, 0.1);
 }
 
-.skills-list span:hover {
-  transform: translateY(-5px);
-  background: #0056b3;
+.skills-grid span:hover {
+  background: #004080;
+  color: #fff;
+  transform: translateY(-4px);
 }
 
-body.dark .skills h2 {
-  color: #f1f1f1;
-}
-
-body.dark .skills-list span {
-  background: #1a73e8;
-}
-
-body.dark .skills-list span:hover {
-  background: #155bb5;
-}
-
-@media (max-width: 600px) {
-  .skills-list {
-    gap: 10px;
-  }
-
-  .skills-list span {
-    padding: 8px 15px;
+/* Responsive design */
+@media (max-width: 768px) {
+  .skills-grid span {
     font-size: 0.9rem;
+    padding: 0.5rem 0.9rem;
+  }
+
+  .skills-section h2 {
+    font-size: 1.6rem;
   }
 }
 
-.skills span {
-  display: inline-block;
-  background: #004aad;
-  color: white;
-  padding: 0.5rem 1rem;
-  margin: 0.3rem;
-  border-radius: 5px;
+/* Dark mode support */
+body.dark-mode .skills-grid span {
+  background: #222;
+  color: #fff;
+  box-shadow: 0 3px 8px rgba(255, 255, 255, 0.05);
 }
+
+body.dark-mode .skills-grid span:hover {
+  background: #ffcc00;
+  color: #000;
+}
+
 
 .project-grid {
   display: grid;
@@ -605,7 +720,6 @@ header {
 } 
 
 
-
 .content {
   max-width: 900px;
   margin: 2rem auto;
@@ -632,3 +746,167 @@ footer {
   color: white;
   margin-top: 2rem;
 } 
+
+/* ---------------------------
+   REFLECTION PAGE STYLING
+----------------------------*/
+
+.reflection {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  text-align: left;
+  line-height: 1.8;
+  color: #333;
+}
+
+.reflection h2 {
+  text-align: center;
+  color: #004080;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #004080;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+}
+
+.reflection p {
+  font-size: 1.05rem;
+  margin-bottom: 1.5rem;
+  text-align: justify;
+  text-indent: 30px;
+}
+
+/* Hover transition for better readability */
+.reflection p:hover {
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .reflection {
+    padding: 1.2rem;
+  }
+
+  .reflection h2 {
+    font-size: 1.6rem;
+  }
+
+  .reflection p {
+    font-size: 0.95rem;
+    text-indent: 20px;
+  }
+}
+
+/* Dark mode support */
+body.dark-mode .reflection {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .reflection h2 {
+  color: #ffcc00;
+  border-bottom: 3px solid #ffcc00;
+}
+
+/* ---------------------------
+   CONTACT PAGE STYLING
+----------------------------*/
+
+.contact {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  color: #333;
+}
+
+.contact h2 {
+  text-align: center;
+  color: #004080;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 3px solid #004080;
+  display: inline-block;
+  padding-bottom: 0.4rem;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.contact-item {
+  font-size: 1.1rem;
+}
+
+.contact-item a {
+  color: #004080;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+  color: #007bff;
+}
+
+/* References */
+.references {
+  list-style: none;
+  padding: 0;
+}
+
+.references li {
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+}
+
+.references strong {
+  color: #004080;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact {
+    padding: 1.5rem;
+  }
+
+  .contact h2 {
+    font-size: 1.6rem;
+  }
+
+  .contact-item {
+    font-size: 1rem;
+  }
+}
+
+/* Dark Mode */
+body.dark-mode .contact {
+  background: #1e1e1e;
+  color: #e0e0e0;
+  box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .contact h2 {
+  color: #ffcc00;
+  border-bottom: 3px solid #ffcc00;
+}
+
+body.dark-mode .contact-item a {
+  color: #ffcc00;
+}
+
+body.dark-mode .references strong {
+  color: #ffcc00;
+}
+
