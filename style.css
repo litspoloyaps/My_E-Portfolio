@@ -211,10 +211,6 @@ body.dark .about p {
   margin: 3px 0;
 }
 
-/* ---------------------------
-   CERTIFICATES PAGE STYLING
-----------------------------*/
-
 .content {
   max-width: 1100px;
   margin: 3rem auto;
@@ -233,7 +229,6 @@ body.dark .about p {
   padding-bottom: 0.5rem;
 }
 
-/* Card Layout */
 .card {
   display: flex;
   align-items: center;
@@ -251,7 +246,6 @@ body.dark .about p {
   box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* Certificate Images */
 .certificate-logo {
   width: 160px;
   height: auto;
@@ -266,7 +260,6 @@ body.dark .about p {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-/* Certificate Information */
 .certificate-info {
   text-align: left;
   flex: 1;
@@ -283,9 +276,6 @@ body.dark .about p {
   color: #555;
 }
 
-/* ---------------------------
-   MODAL IMAGE VIEWER
-----------------------------*/
 .modal {
   display: none; /* Hidden by default */
   position: fixed;
@@ -309,7 +299,6 @@ body.dark .about p {
   animation: fadeIn 0.4s ease-in;
 }
 
-/* Modal Close Button */
 .close {
   position: absolute;
   top: 25px;
@@ -325,15 +314,11 @@ body.dark .about p {
   color: #ffcc00;
 }
 
-/* Fade-in animation */
 @keyframes fadeIn {
   from { opacity: 0; transform: scale(0.95); }
   to { opacity: 1; transform: scale(1); }
 }
 
-/* ---------------------------
-   RESPONSIVE DESIGN
-----------------------------*/
 @media (max-width: 900px) {
   .card {
     flex-direction: column;
@@ -365,10 +350,6 @@ body.dark .about p {
   }
 }
 
-/* ---------------------------
-   PROJECTS PAGE STYLING
-----------------------------*/
-
 .content {
   max-width: 1100px;
   margin: 3rem auto;
@@ -387,14 +368,12 @@ body.dark .about p {
   text-transform: uppercase;
 }
 
-/* Grid layout for projects */
 .project-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
-/* Project card styling */
 .project-card {
   background: #ffffff;
   border-radius: 12px;
@@ -420,7 +399,6 @@ body.dark .about p {
   margin-bottom: 1rem;
 }
 
-/* Project buttons */
 .project-card .btn {
   background: #004080;
   color: #fff;
@@ -437,7 +415,6 @@ body.dark .about p {
   transform: scale(1.05);
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
   .project-card {
     padding: 1.2rem;
@@ -448,7 +425,6 @@ body.dark .about p {
   }
 }
 
-/* Dark Mode Support */
 body.dark-mode .project-card {
   background: #1e1e1e;
   box-shadow: 0 4px 10px rgba(255, 255, 255, 0.05);
@@ -541,10 +517,6 @@ footer {
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* ---------------------------
-   SKILLS PAGE STYLING
-----------------------------*/
-
 .skills-section {
   max-width: 1000px;
   margin: 3rem auto;
@@ -563,7 +535,6 @@ footer {
   letter-spacing: 1px;
 }
 
-/* Grid layout for skill tags */
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
@@ -572,7 +543,6 @@ footer {
   margin-top: 1rem;
 }
 
-/* Skill badge styling */
 .skills-grid span {
   background: #e6f0ff;
   color: #004080;
@@ -591,7 +561,6 @@ footer {
   transform: translateY(-4px);
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .skills-grid span {
     font-size: 0.9rem;
@@ -603,7 +572,6 @@ footer {
   }
 }
 
-/* Dark mode support */
 body.dark-mode .skills-grid span {
   background: #222;
   color: #fff;
@@ -780,13 +748,11 @@ footer {
   text-indent: 30px;
 }
 
-/* Hover transition for better readability */
 .reflection p:hover {
   color: #000;
   transition: color 0.3s ease;
 }
 
-/* Responsive design */
 @media (max-width: 768px) {
   .reflection {
     padding: 1.2rem;
@@ -802,7 +768,6 @@ footer {
   }
 }
 
-/* Dark mode support */
 body.dark-mode .reflection {
   background: #1e1e1e;
   color: #e0e0e0;
@@ -813,10 +778,6 @@ body.dark-mode .reflection h2 {
   color: #ffcc00;
   border-bottom: 3px solid #ffcc00;
 }
-
-/* ---------------------------
-   CONTACT PAGE STYLING
-----------------------------*/
 
 .contact {
   max-width: 900px;
@@ -860,7 +821,6 @@ body.dark-mode .reflection h2 {
   color: #007bff;
 }
 
-/* References */
 .references {
   list-style: none;
   padding: 0;
@@ -875,7 +835,6 @@ body.dark-mode .reflection h2 {
   color: #004080;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
   .contact {
     padding: 1.5rem;
@@ -890,7 +849,6 @@ body.dark-mode .reflection h2 {
   }
 }
 
-/* Dark Mode */
 body.dark-mode .contact {
   background: #1e1e1e;
   color: #e0e0e0;
@@ -909,4 +867,5 @@ body.dark-mode .contact-item a {
 body.dark-mode .references strong {
   color: #ffcc00;
 }
+
 
