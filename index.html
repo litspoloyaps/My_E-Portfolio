@@ -1,64 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lito R. Poloyapoy | E-Portfolio</title>
-  
-  <link rel="stylesheet" href="style.css" />
-  
+  <link rel="stylesheet" href="style.css">
   <link rel="icon" type="image/png" href="favicon.png">
 </head>
 
 <body>
 
-  <header>
-    <nav class="navbar">
-      <h1 class="logo">Poloyapoy's E-Portfolio</h1>
+<header class="header">
+  <nav class="navbar">
+    <h1 class="logo">Poloyapoy Portfolio</h1>
 
-      <ul class="nav-links" id="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="education.html">Education</a></li>
-        <li><a href="certificates.html">Certificates</a></li>
-        <li><a href="skills.html">Skills</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="reflection.html">Reflection</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <div class="nav-toggle" id="menu-toggle">☰</div>
 
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Hello, I'm <span>Lito R. Poloyapoy</span></h2>
-      <p>Aspiring Web Developer & Designer</p>
-      <button id="theme-toggle" aria-label="Toggle dark mode">🌙 Dark Mode</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="education.html">Education</a></li>
+      <li><a href="certificates.html">Certificates</a></li>
+      <li><a href="skills.html">Skills</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="reflection.html">Reflection</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+    <button id="theme-toggle" class="theme-btn">🌙</button>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h2>Hello, I'm <span>Lito R. Poloyapoy</span></h2>
+    <p>Web Developer • Designer • IT Student</p>
+  </div>
+</section>
+
+<section class="about-section">
+  <h2>About Me</h2>
+
+  <div class="about-wrapper">
+    <img src="Lito.jpg" alt="Lito R. Poloyapoy" class="profile-photo">
+
+    <div class="about-text">
+      <p>
+        I am <strong>Lito R. Poloyapoy</strong>, an Information Technology student at 
+        <em>Colegio de Montalban</em>. I have strong passion in web development, design, computer, network and technology.
+      </p>
+
+      <p>
+        <strong>Career Goal:</strong> Web Designer • IT Network Engineer • Cybersecurity Specialist
+      </p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section class="about">
-    <h2>About Me</h2>
+<footer class="footer">
+  <p>© 2025 Lito R. Poloyapoy • All Rights Reserved</p>
+</footer>
 
-    <div class="profile-photo">
-      <img src="Lito.jpg" alt="Photo of Lito R. Poloyapoy" loading="lazy">
-    </div>
-
-    <p>
-      Hello! I’m <strong>Lito R. Poloyapoy</strong>, a college student from 
-      <em>Colegio de Montalban</em> taking up Bachelor of Science in Information Technology.
-      I’m passionate about computers and technology.
-    </p>
-    <p>
-      <strong>Career Goal:</strong> IT Network Engineer / Cybersecurity Specialist / Web Designer
-    </p>
-  </section>
-
-  <footer>
-    <p>© 2025 Lito R. Poloyapoy. All Rights Reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
-
-
