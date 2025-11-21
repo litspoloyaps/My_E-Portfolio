@@ -210,13 +210,6 @@ body.dark .about p {
   margin: 3px 0;
 }
 
-.content {
-  max-width: 1100px;
-  margin: 3rem auto;
-  padding: 1rem;
-  text-align: center;
-}
-
 .content h2 {
   font-size: 2.2rem;
   color: #004080;
@@ -228,16 +221,22 @@ body.dark .about p {
   padding-bottom: 0.5rem;
 }
 
+.certificate-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.8rem;
+}
+
 .card {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: start;
   background: #ffffff;
   border-radius: 12px;
-  margin-bottom: 1.8rem;
-  padding: 1rem 1.5rem;
+  padding: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
 }
 
 .card:hover {
@@ -246,10 +245,11 @@ body.dark .about p {
 }
 
 .certificate-logo {
-  width: 160px;
+  width: 100%;
   height: auto;
+  max-width: 160px;
   border-radius: 10px;
-  margin-right: 1.5rem;
+  margin-bottom: 1rem;
   cursor: pointer;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -259,24 +259,19 @@ body.dark .about p {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-.certificate-info {
-  text-align: left;
-  flex: 1;
-}
-
 .certificate-info h3 {
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   color: #004080;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.3rem;
 }
 
 .certificate-info p {
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   color: #555;
 }
 
 .modal {
-  display: none; /* Hidden by default */
+  display: none;
   position: fixed;
   z-index: 100;
   padding-top: 80px;
@@ -318,34 +313,35 @@ body.dark .about p {
   to { opacity: 1; transform: scale(1); }
 }
 
-@media (max-width: 900px) {
-  .card {
-    flex-direction: column;
-    text-align: center;
+@media (max-width: 1200px) {
+  .certificate-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
+}
 
-  .certificate-logo {
-    margin: 0 0 1rem 0;
-    width: 80%;
-    max-width: 300px;
+@media (max-width: 992px) {
+  .certificate-grid {
+    grid-template-columns: repeat(3, 1fr);
   }
+}
 
-  .certificate-info {
-    text-align: center;
+@media (max-width: 768px) {
+  .certificate-grid {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 500px) {
-  .content h2 {
-    font-size: 1.8rem;
+  .certificate-grid {
+    grid-template-columns: 1fr;
   }
 
   .certificate-info h3 {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .certificate-info p {
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
 }
 
@@ -866,3 +862,4 @@ body.dark-mode .contact-item a {
 body.dark-mode .references strong {
   color: #ffcc00;
 }
+
